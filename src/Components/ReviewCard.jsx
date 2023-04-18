@@ -15,6 +15,9 @@ const ReviewParent = () => {
             setIsLoading(false);
             setCurrentReviews(response);
         })
+        .catch((error) => {
+            console.log('error', error)
+        })
     }, []);
 
     if (isLoading) {
