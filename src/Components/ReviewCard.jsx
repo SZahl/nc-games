@@ -1,8 +1,8 @@
-import BriefReviewInfo from "./BriefReviewInfo";
+import BriefReviewInfo from "./Reviews";
 import { useState, useEffect } from 'react'; 
 import Sort from "./Sort";
 import UsersButton from "./UsersButton";
-import { fetchReviews } from "../api";
+import { fetchReviews } from "../utils/api";
 
 const ReviewParent = () => {
 
@@ -13,7 +13,7 @@ const ReviewParent = () => {
         setIsLoading(true);
         fetchReviews().then((response) => {
             setIsLoading(false);
-            setCurrentReviews(response.data.reviews);
+            setCurrentReviews(response);
         })
     }, []);
 
