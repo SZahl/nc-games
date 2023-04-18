@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './Components/Header.jsx';
-import ReviewParent from './Components/ReviewParent';
+import ReviewParent from './Components/ReviewCard';
 
 function App() {
   return (
