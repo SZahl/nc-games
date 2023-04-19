@@ -4,7 +4,7 @@ import Sort from "./Sort";
 import UsersButton from "./UsersButton";
 import { fetchReviews } from "../utils/api";
 
-const ReviewParent = () => {
+const ReviewCard = () => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [currentReviews, setCurrentReviews] = useState([]);
@@ -33,4 +33,4 @@ const ReviewParent = () => {
     )
 }
 
-export default ReviewParent;
+export default ReviewCard;
