@@ -19,5 +19,13 @@ const fetchReviewByID = (review_id) => {
         return data.review[0]
     })
 }
-
 export default fetchReviewByID;
+
+
+export const fetchComments = (review_id) => {
+    return reviews
+    .get(`/reviews/${review_id}/comments`)
+    .then(({ data }) => {
+        return data.comments
+    })
+}

@@ -1,28 +1,36 @@
-import { Link } from "react-router-dom";
+import ReviewCard from "./ReviewCard";
+import { useState, useEffect } from 'react'; 
+import Sort from "./Sort";
+import UsersButton from "./UsersButton";
+import { fetchReviews } from "../utils/api";
 
-const BriefReviewInfo = ({reviews}) => {
+const Reviews = () => {
+
+    const [isLoading, setIsLoading] = useState(true);
+    const [currentReviews, setCurrentReviews] = useState([]);
+
+    useEffect(() => {
+        setIsLoading(true);
+        fetchReviews().then((response) => {
+            setIsLoading(false);
+            setCurrentReviews(response);
+        })
+        .catch((error) => {
+            console.log('error', error)
+        })
+    }, []);
+
+    if (isLoading) {
+        return <h3>Reviews Loading...</h3>;
+      }
 
     return (
-        <>
-        <h3>Recent Reviews</h3>
-        <ul id="topReviews">
-            {
-                reviews.map((eachReview) => {
-                    return (
-                        <li key={eachReview.review_id} className="singleReview">
-                            <Link to={`/reviews/${eachReview.review_id}`}>
-                            <p className="reviewTitle">{eachReview.title}</p>
-                            </Link>
-                            <p>by {eachReview.owner}</p>
-                            <p>{eachReview.review_body.length > 250 ? `${eachReview.review_body.substring(0, 250)}...` : eachReview.review_body}</p>
-                            <p>Posted at {eachReview.created_at}</p>
-                        </li>
-                    )
-                })
-            }
-        </ul>
-        </>
+        <div>
+            <Sort />
+            <UsersButton />
+            <ReviewCard reviews={currentReviews}/>
+        </div>
     )
 }
 
-export default BriefReviewInfo;
+export default Reviews;
