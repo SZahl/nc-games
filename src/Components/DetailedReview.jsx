@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchReviewByID, addVotes } from '../utils/api'
 import Comments from '../Components/Comments.jsx'
+import { FormatDate } from '../utils/FormatDate';
 
 const DetailedReview = () => {
 
@@ -48,12 +49,13 @@ if (isLoading) {
             <p>Written by {currentReviewByID.owner}</p>
             <p>{currentReviewByID.review_body}</p>
             <p>Category :- {currentReviewByID.category}</p>
-            <p>Posted at {currentReviewByID.created_at}</p>
+            <p>Posted at:- <FormatDate date={currentReviewByID.created_at}/></p>
             <p>Current votes :- {currentVotes}</p>
             <button className="voteButton" disabled={buttonDisable} onClick={handleAddedVotes}>Vote for this review!</button><br />
             <p>{voteCastText}</p>
             <img src={currentReviewByID.review_img_url} alt='gameplay depiction'/>
             <Comments review_id={review_id}/>
+            
         </div>
     )
 }

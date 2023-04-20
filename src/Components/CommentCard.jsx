@@ -1,3 +1,4 @@
+import { FormatDate } from "../utils/FormatDate";
 
 const CommentCard = ({ currentComments }) => {
 
@@ -12,8 +13,9 @@ const CommentCard = ({ currentComments }) => {
                             <li key={eachComment.comment_id} className="singleComment">
                                 <p className="commentAuthor">{eachComment.author} says...</p>
                                 <p>{eachComment.body}</p>
-                                <p>Written at:- {eachComment.created_at}</p>
+                                <p>Posted at:- <FormatDate date={eachComment.created_at}/></p>
                                 <p>Current votes:- {eachComment.votes}</p>
+                                
                             </li>
                         )
                     })
