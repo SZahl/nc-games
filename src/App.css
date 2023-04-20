@@ -47,3 +47,15 @@ a:hover {
 .commentAuthor  {
   font-weight: bold;
 }
+
+.voteButton {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.voteButton:hover {
+  transition: 0.7s;
+  background-color: #adadad;
+}
