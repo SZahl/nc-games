@@ -3,6 +3,7 @@ import DetailedReview from './Components/DetailedReview.jsx';
 import Header from './Components/Header.jsx';
 import Reviews from './Components/Reviews.jsx';
 import { Route, Routes } from "react-router-dom";
+import UsersParent from './Components/Users';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 
       <Route path="/" element={<Reviews />} />
       <Route path="/reviews/:review_id" element={<DetailedReview />} />
+      <Route path="/users" element={<UsersParent />} />
 
       </Routes>
     </div>

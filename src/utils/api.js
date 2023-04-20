@@ -45,3 +45,11 @@ export const postNewComment = (review_id, wholeComment) => {
         return response.data.comment
     })
 }
+
+export const fetchUsers = () => {
+    return reviews
+    .get(`/users`)
+    .then((response) => {
+        return response.data.users;
+    })
+}

@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
 
 const UsersButton = () => {
     return (
         <div>
-            <p>hello from users button</p>
+            <Link to='/users' className="usersLink">
+            <p>View all of our active users</p>
+            </Link>
         </div>
     )
 }
