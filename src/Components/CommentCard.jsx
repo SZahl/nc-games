@@ -1,7 +1,7 @@
 
 const CommentCard = ({ currentComments }) => {
 
-    if(!currentComments) return;
+    if(!currentComments) return <p>This review has no comments</p>;
     return (
         <div>
             <h3>Most recent comments</h3>
