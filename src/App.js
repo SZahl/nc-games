@@ -1,7 +1,7 @@
 import './App.css';
 import DetailedReview from './Components/DetailedReview.jsx';
 import Header from './Components/Header.jsx';
-import ReviewCard from './Components/ReviewCard.jsx';
+import Reviews from './Components/Reviews.jsx';
 import { Route, Routes } from "react-router-dom";
 
 
@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Routes>
 
-      <Route path="/" element={<ReviewCard />} />
+      <Route path="/" element={<Reviews />} />
       <Route path="/reviews/:review_id" element={<DetailedReview />} />
 
       </Routes>

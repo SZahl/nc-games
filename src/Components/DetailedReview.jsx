@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import fetchReviewByID from '../utils/api'
+import Comments from '../Components/Comments.jsx'
 // import { format } from 'date-fns'
 
 const DetailedReview = () => {
@@ -27,8 +28,6 @@ if (isLoading) {
     return <h3>Reviews Loading...</h3>;
   }
 
-console.log(currentReviewByID)
-
     return (
         <div>
             <p className='reviewTitle'>{currentReviewByID.title}</p>
@@ -39,6 +38,7 @@ console.log(currentReviewByID)
             <p>Posted at {currentReviewByID.created_at}</p>
             <p>Current votes :- {currentReviewByID.votes}</p>
             <img src={currentReviewByID.review_img_url} alt='gameplay depiction'/>
+            <Comments review_id={review_id}/>
         </div>
     )
 }
