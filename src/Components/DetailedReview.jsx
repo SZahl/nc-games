@@ -22,7 +22,7 @@ const DetailedReview = () => {
     .catch((error) => {
         console.log('error', error)
     })
-}, [review_id, currentVotes]);
+}, [review_id]);
 
 if (isLoading) {
     return <h3>Reviews Loading...</h3>;
