@@ -37,3 +37,13 @@ a:hover {
   color: blue;
   transition: 0.5s;
 }
+
+.singleComment {
+  border-style: solid;
+  border-color: red;
+  border-radius: 20px;
+}
+
+.commentAuthor  {
+  font-weight: bold;
+}

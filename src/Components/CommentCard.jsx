@@ -10,10 +10,10 @@ const CommentCard = ({ currentComments }) => {
                     currentComments.map((eachComment) => {
                         return (
                             <li key={eachComment.comment_id} className="singleComment">
-                                <p>{eachComment.author}</p>
+                                <p className="commentAuthor">{eachComment.author} says...</p>
                                 <p>{eachComment.body}</p>
-                                <p>{eachComment.created_at}</p>
-                                <p>{eachComment.votes}</p>
+                                <p>Written at:- {eachComment.created_at}</p>
+                                <p>Current votes:- {eachComment.votes}</p>
                                 <p></p>
                             </li>
                         )
