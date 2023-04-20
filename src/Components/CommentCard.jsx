@@ -14,7 +14,6 @@ const CommentCard = ({ currentComments }) => {
                                 <p>{eachComment.body}</p>
                                 <p>Written at:- {eachComment.created_at}</p>
                                 <p>Current votes:- {eachComment.votes}</p>
-                                <p></p>
                             </li>
                         )
                     })

@@ -12,14 +12,13 @@ export const fetchReviews = () => {
     })
 }
 
-const fetchReviewByID = (review_id) => {
+export const fetchReviewByID = (review_id) => {
     return reviews
     .get(`/reviews/${review_id}`)
     .then(({ data }) => {
         return data.review[0]
     })
 }
-export default fetchReviewByID;
 
 
 export const fetchComments = (review_id) => {
@@ -27,5 +26,19 @@ export const fetchComments = (review_id) => {
     .get(`/reviews/${review_id}/comments`)
     .then(({ data }) => {
         return data.comments
+    })
+}
+
+export const addVotes = (review_id, setCurrentVotes, setButtonDisable, setVoteCastText) => {
+    const increment = { inc_votes: 1 };
+    return reviews
+    .patch(`/reviews/${review_id}`, increment)
+    .then(({ data }) => {
+        setCurrentVotes(data.votes);
+        setButtonDisable(true);
+        setVoteCastText('Your vote has been added!')
+    })
+    .catch((error) => {
+        setVoteCastText('Error, please try again!')
     })
 }
