@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { postNewComment } from '../utils/api';
+import { FormatDate } from '../utils/FormatDate';
 
 export const PostCommentForm = ({review_id}) => {
 
@@ -41,15 +42,15 @@ useEffect(() => {
     return (
         <div>
             <form id="postCommentForm" onSubmit={handleFormSubmit}>
-                <label>Username: </label><input required disabled={disabledState} value={username} onChange={(event) => {setUsername(event.target.value)}}></input><br />
-                <label>Comment: </label><textarea required value={commentInput} disabled={disabledState} onChange={(event) => {setCommentInput(event.target.value)}}></textarea><br />
+                <label>Username: <input required disabled={disabledState} value={username} onChange={(event) => {setUsername(event.target.value)}}></input></label><br />
+                <label>Comment: <textarea required value={commentInput} disabled={disabledState} onChange={(event) => {setCommentInput(event.target.value)}}></textarea></label><br />
                 <button type="submit" disabled={disabledState}>Submit comment</button>
             </form>
             {
                 successfulComment ? (<>                            <li key={successfulComment.comment_id} className="singleComment">
                                 <p className="commentAuthor">{successfulComment.author} says...</p>
                                 <p>{successfulComment.body}</p>
-                                <p>Written at:- {successfulComment.created_at}</p>
+                                <p>Posted at:- <FormatDate date={successfulComment.created_at} /></p>
                                 <p>Current votes:- {successfulComment.votes}</p>
                             </li></>) : (
                                 ""

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchComments } from "../utils/api"
 import CommentCard from './CommentCard.jsx'
-import { PostComment } from './PostComment';
 
 const Comments = ({ review_id }) => {
 
@@ -25,8 +24,7 @@ const Comments = ({ review_id }) => {
 
     return (
         <div>
-        <CommentCard currentComments={currentComments}/>
-        <PostComment review_id={review_id}/>
+        <CommentCard currentComments={currentComments} review_id={review_id}/>
         </div>
     )
 }

@@ -45,9 +45,9 @@ if (isLoading) {
     return (
         <div>
             <p className='reviewTitle'>{currentReviewByID.title}</p>
-            <p>Designed by {currentReviewByID.designer}</p>
-            <p>Written by {currentReviewByID.owner}</p>
-            <p>{currentReviewByID.review_body}</p>
+            <p id="designedBy">Designed by {currentReviewByID.designer}</p>
+            <p id="writtenBy">Written by {currentReviewByID.owner}</p>
+            <p id="detailedReviewBody">{currentReviewByID.review_body}</p>
             <p>Category :- {currentReviewByID.category}</p>
             <p>Posted at:- <FormatDate date={currentReviewByID.created_at}/></p>
             <p>Current votes :- {currentVotes}</p>

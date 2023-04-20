@@ -5,7 +5,7 @@ const ReviewCard = ({reviews}) => {
 
     return (
         <>
-        <h3>Recent Reviews</h3>
+        <h3 id="recentReviews">Recent Reviews</h3>
         <ul id="topReviews">
             {
                 reviews.map((eachReview) => {

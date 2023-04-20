@@ -1,11 +1,13 @@
 import { FormatDate } from "../utils/FormatDate";
+import { PostComment } from "./PostComment";
 
-const CommentCard = ({ currentComments }) => {
+const CommentCard = ({ currentComments, review_id }) => {
 
     if(!currentComments) return <p>This review has no comments</p>;
     return (
         <div>
             <h3>Most recent comments</h3>
+            <PostComment review_id={review_id}/>
             <ul id="reviewComments">
                 {
                     currentComments.map((eachComment) => {
