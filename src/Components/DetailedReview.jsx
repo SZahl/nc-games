@@ -28,6 +28,19 @@ if (isLoading) {
     return <h3>Reviews Loading...</h3>;
   }
 
+  const handleAddedVotes= () => {
+    setCurrentVotes((currentVotes) => currentVotes + 1);
+
+    addVotes(review_id).then(() => {
+        setButtonDisable(true);
+        setVoteCastText('Your vote has been added!')
+    })
+    .catch((error) => {
+        setCurrentVotes((currentVotes) => currentVotes - 1)
+        setVoteCastText('Error, please try again!')
+    })
+  }
+
     return (
         <div>
             <p className='reviewTitle'>{currentReviewByID.title}</p>
@@ -37,7 +50,7 @@ if (isLoading) {
             <p>Category :- {currentReviewByID.category}</p>
             <p>Posted at {currentReviewByID.created_at}</p>
             <p>Current votes :- {currentVotes}</p>
-            <button className="voteButton" disabled={buttonDisable} onClick={() => {addVotes(review_id, setCurrentVotes, setButtonDisable, setVoteCastText)}}>Vote for this review!</button><br />
+            <button className="voteButton" disabled={buttonDisable} onClick={handleAddedVotes}>Vote for this review!</button><br />
             <p>{voteCastText}</p>
             <img src={currentReviewByID.review_img_url} alt='gameplay depiction'/>
             <Comments review_id={review_id}/>
@@ -46,5 +59,3 @@ if (isLoading) {
 }
 
 export default DetailedReview;
-
-

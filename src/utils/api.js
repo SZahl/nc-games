@@ -29,16 +29,11 @@ export const fetchComments = (review_id) => {
     })
 }
 
-export const addVotes = (review_id, setCurrentVotes, setButtonDisable, setVoteCastText) => {
+export const addVotes = (review_id) => {
     const increment = { inc_votes: 1 };
     return reviews
     .patch(`/reviews/${review_id}`, increment)
-    .then(({ data }) => {
-        setCurrentVotes(data.votes);
-        setButtonDisable(true);
-        setVoteCastText('Your vote has been added!')
-    })
-    .catch((error) => {
-        setVoteCastText('Error, please try again!')
+    .then(() => {
+        return;
     })
 }
