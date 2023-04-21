@@ -1,26 +1,18 @@
-.App {
+body {
+  background-color: 
+  #E2CE89;
+  color: 
+  #19505A;
   text-align: center;
   margin-inline: auto;
   max-width: 1100px;
   align-items: center;
-  /* display: grid; */
-  /* grid-template-columns: repeat(); */
-}
-
-.singleReview {
-  border-style: solid;
-  border-color: red;
-  border-radius: 20px;
-
-}
-
-.reviewTitle {
-  font-weight: bold;
 }
 
 img {
   width: 80%;
   max-width: 600px;
+  border-radius: 10px;
 }
 
 ul {  
@@ -29,18 +21,52 @@ ul {
   padding: 0px;
 }
 
+h1 {
+  font-size: 40px;
+}
+
 a {
   color: black;
 }
 
 a:hover {
-  color: blue;
-  transition: 0.5s;
+  color: #E2CE89;
+  transition: 0.6s;
+}
+
+.homeLink:hover {
+  color: #19505A;
+  transition: 0.6s;
+}
+
+.usersLink {
+  font-weight: bold;
+}
+
+.usersLink:hover {
+  color: #19505A;
+  transition: 0.6s;
+}
+
+.singleReview {
+  padding: 10px;
+}
+
+.singleReview:hover {
+  background-color: #19505A;
+  color: #E2CE89;
+  transition: 0.6s;
+  border-radius: 20px;
 }
 
 .singleComment {
-  border-style: solid;
-  border-color: red;
+  padding: 10px;
+}
+
+.singleComment:hover {
+  background-color: #19505A;
+  color: #E2CE89;
+  transition: 0.6s;
   border-radius: 20px;
 }
 
@@ -57,5 +83,122 @@ a:hover {
 
 .voteButton:hover {
   transition: 0.7s;
-  background-color: #adadad;
+  background-color: #19505A;
+  color: #E2CE89;
+  transition: 0.6s;
+}
+
+.postCommentButton {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.postCommentButton:hover {
+  transition: 0.7s;
+  background-color: #19505A;
+  color: #E2CE89;
+  transition: 0.6s;
+}
+
+.pretendToBeUserButton {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.pretendToBeUserButton:hover {
+  transition: 0.7s;
+  background-color: #19505A;
+  color: #E2CE89;
+  transition: 0.6s;
+}
+
+.signOutButton {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.signOutButton:hover {
+  transition: 0.7s;
+  background-color: #19505A;
+  color: #E2CE89;
+  transition: 0.6s;
+}
+
+.submitCommentButton {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.submitCommentButton:hover {
+  transition: 0.7s;
+  background-color: #19505A;
+  color: #E2CE89;
+  transition: 0.6s;
+}
+
+.reviewTitle {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.allUsers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.singleUser {
+  max-width: 40%;
+}
+
+.usersAvatar {
+  max-width: 200px;
+  border-radius: 50px;
+}
+
+.userProfile {
+  max-width: 200px;
+  border-radius: 50px;
+  margin: 20px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+#designedBy {
+  text-decoration: underline;
+}
+
+#commentErrorText {
+  font-weight: bold;
+}
+
+#writtenBy {
+  text-decoration: underline;
+}
+
+#recentReviews {
+  font-size: 24px;
+}
+
+#detailedReviewBody {
+  padding: 20px;
+  font-size: 20px;
+}
+
+#currentUsersHeader {
+  font-size: 22px;
 }

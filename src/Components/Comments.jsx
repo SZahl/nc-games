@@ -24,7 +24,7 @@ const Comments = ({ review_id }) => {
 
     return (
         <div>
-        <CommentCard currentComments={currentComments}/>
+        <CommentCard currentComments={currentComments} review_id={review_id}/>
         </div>
     )
 }

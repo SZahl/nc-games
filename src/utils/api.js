@@ -37,3 +37,19 @@ export const addVotes = (review_id) => {
         return;
     })
 }
+
+export const postNewComment = (review_id, wholeComment) => {
+    return reviews
+    .post(`reviews/${review_id}/comments`, wholeComment)
+    .then((response) => {
+        return response.data.comment
+    })
+}
+
+export const fetchUsers = () => {
+    return reviews
+    .get(`/users`)
+    .then((response) => {
+        return response.data.users;
+    })
+}

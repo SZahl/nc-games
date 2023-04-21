@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Sort from "./Sort";
 import UsersButton from "./UsersButton";
 import { fetchReviews } from "../utils/api";
+import { CategoryFilter } from "./CategoryFilter";
 
 const Reviews = () => {
 
@@ -27,6 +28,7 @@ const Reviews = () => {
     return (
         <div>
             <Sort />
+            <CategoryFilter />
             <UsersButton />
             <ReviewCard reviews={currentReviews}/>
         </div>
