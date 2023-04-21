@@ -20,6 +20,7 @@ const handleFormSubmit = (event) => {
 
 useEffect(() => {
     if (wholeComment) {
+        setErrorMessage('')
         setSuccessfulComment({
             body: wholeComment.body,
             username: wholeComment.username,
@@ -40,6 +41,9 @@ useEffect(() => {
         .catch((error) => {
             console.log('error', error)
             setErrorMessage(error.response.data.message)
+            setSuccessfulComment('')
+            setUsername('')
+            setCommentInput('')
         })
     }
 }, [wholeComment, review_id])

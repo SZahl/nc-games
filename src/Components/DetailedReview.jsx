@@ -29,7 +29,7 @@ if (isLoading) {
     return <h3>Reviews Loading...</h3>;
   }
 
-  const handleAddedVotes= () => {
+  const handleAddedVotes = () => {
     setCurrentVotes((currentVotes) => currentVotes + 1);
 
     addVotes(review_id).then(() => {
