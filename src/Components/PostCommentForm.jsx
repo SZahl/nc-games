@@ -1,43 +1,34 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { postNewComment } from '../utils/api';
 
 export const PostCommentForm = ({review_id}) => {
 
-const [username, setUsername] = useState()
+const [username, setUsername] = useState('')
 const [commentInput, setCommentInput] = useState('')
-const [wholeComment, setWholeComment] = useState('')
 const [disabledState, setDisabledState] = useState(false);
-const [successfulComment, setSuccessfulComment] = useState();
-const [errorMessage, setErrorMessage] = useState();
+const [successfulComment, setSuccessfulComment] = useState('');
+const [errorMessage, setErrorMessage] = useState('');
+
+
 
 const handleFormSubmit = (event) => {
     event.preventDefault();
-    setWholeComment({
+    setErrorMessage('')
+    const wholeComment = {
         username: username,
         body: commentInput
+    }
+    setSuccessfulComment({
+        username: username,
+        body: commentInput,
+        votes: 0
     })
-}
-
-useEffect(() => {
-    if (wholeComment) {
-        setErrorMessage('')
-        setSuccessfulComment({
-            body: wholeComment.body,
-            username: wholeComment.username,
-            votes: 0,
-        })
-        postNewComment(review_id, wholeComment)
-        .then((response) => {
+    postNewComment(review_id, wholeComment)
+        .then(() => {
             setDisabledState(true);
-            setSuccessfulComment({
-                comment_id: response.comment_id,
-                body: response.body,
-                votes: response.votes,
-                author: response.author,
-                review_id: response.review_id,
-                created_at: response.created_at
-            })
-        })
+            setUsername('')
+            setCommentInput('')
+    })
         .catch((error) => {
             console.log('error', error)
             setErrorMessage(error.response.data.message)
@@ -45,8 +36,7 @@ useEffect(() => {
             setUsername('')
             setCommentInput('')
         })
-    }
-}, [wholeComment, review_id])
+    }    
 
     return (
         <div>
@@ -58,7 +48,7 @@ useEffect(() => {
             <p id="commentErrorText">{errorMessage}</p>
             {
                 successfulComment ? (<>                            <li key={successfulComment.comment_id} className="singleComment">
-                                <p className="commentAuthor">{successfulComment.author} says...</p>
+                                <p className="commentAuthor">{successfulComment.username} says...</p>
                                 <p>{successfulComment.body}</p>
                                 <p>Posted just now!</p>
                                 <p>Current votes:- {successfulComment.votes}</p>
