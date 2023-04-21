@@ -1,5 +1,5 @@
 
-const UsersCard = ({users}) => {
+const UsersCard = ({users, pretendToBeUser}) => {
 
     return (
         <>
@@ -10,6 +10,7 @@ const UsersCard = ({users}) => {
                             <li key={eachUser.username} className="singleUser">
                                 <img src={eachUser.avatar_url} alt="users Avatar" className="usersAvatar"/>
                                 <p>{eachUser.username}</p>
+                                <button className="pretendToBeUserButton" onClick={() => {pretendToBeUser(eachUser.username)}}>Pretend to be {eachUser.username}</button>
                             </li>
                         )
                     })

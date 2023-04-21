@@ -4,12 +4,11 @@ import { FormatDate } from '../utils/FormatDate';
 
 export const PostCommentForm = ({review_id}) => {
 
-const [username, setUsername] = useState('')
+const [username, setUsername] = useState()
 const [commentInput, setCommentInput] = useState('')
 const [wholeComment, setWholeComment] = useState('')
 const [disabledState, setDisabledState] = useState(false);
 const [successfulComment, setSuccessfulComment] = useState();
-
 
 const handleFormSubmit = (event) => {
     event.preventDefault();

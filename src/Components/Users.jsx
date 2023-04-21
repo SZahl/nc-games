@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { fetchUsers } from "../utils/api";
 
 
-const Users = () => {
+const Users = ({ pretendToBeUser }) => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [currentUsers, setCurrentUsers] = useState([]);
@@ -26,7 +26,7 @@ const Users = () => {
     return (
         <div>
             <h3 id="currentUsersHeader">Our current users</h3>
-            <UsersCard users={currentUsers}/>
+            <UsersCard users={currentUsers} pretendToBeUser={pretendToBeUser}/>
         </div>
     )
 }

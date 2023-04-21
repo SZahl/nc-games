@@ -102,6 +102,34 @@ a:hover {
   transition: 0.6s;
 }
 
+.pretendToBeUserButton {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.pretendToBeUserButton:hover {
+  transition: 0.7s;
+  background-color: #19505A;
+  color: #E2CE89;
+  transition: 0.6s;
+}
+
+.signOutButton {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.signOutButton:hover {
+  transition: 0.7s;
+  background-color: #19505A;
+  color: #E2CE89;
+  transition: 0.6s;
+}
+
 .reviewTitle {
   font-weight: bold;
   font-size: 20px;
@@ -122,6 +150,20 @@ a:hover {
 .usersAvatar {
   max-width: 200px;
   border-radius: 50px;
+}
+
+.userProfile {
+  max-width: 200px;
+  border-radius: 50px;
+  margin: 20px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  
+
 }
 
 #designedBy {

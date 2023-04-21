@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
+import { SignedInUser } from "./SignedInUser";
 
-const Header = () => {
+const Header = ({ loggedInUser, signOut }) => {
     return (
-        <div>
+        <header className="headerContainer">
+            <SignedInUser loggedInUser={loggedInUser} signOut={signOut}/>
+            <section className="headerText" >
             <Link to='/' className="homeLink">
-            <h1>NC Games!</h1>
+            <h1 className="mainHeader" >NC Games!</h1>
             </Link>
-            <h2>Read all about the good, the bad, and the ugly!</h2>
-        </div>
+            <h2 className="headerMessage">Read all about the good, the bad, and the ugly!</h2>
+            </section>
+        </header>
     )
 }
 
